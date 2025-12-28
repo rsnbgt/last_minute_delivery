@@ -13,13 +13,8 @@ A 3-Tier application designed for delivery agents to verify and confirm shipment
 4.  **Modern UI**: Mobile app refactored to use **Tailwind CSS (`twrnc`)**.
 
 ## Architecture
-See [Architecture Diagram](architecture.md) for a visual flow.
 
-## Prerequisites
-- Node.js & npm
-- MySQL Server
-- Expo Go (on mobile) or Android Emulator
-- **Gmail App Password** (for Email OTPs)
+![alt text](architecture.png)
 
 ## Setup Instructions
 
@@ -82,9 +77,3 @@ See [Architecture Diagram](architecture.md) for a visual flow.
 - **POST** `/api/delivery/request-otp`: Generate 4-digit OTP & send Email (2-min expiry).
 - **POST** `/api/delivery/confirm`: Verify Shipment ID + OTP.
 - **GET** `/api/delivery/history/:agentId`: Get delivery history for an agent.
-
-## AI Usage Explanation
-This project was implemented with the assistance of an AI coding agent (Antigravity).
-- **Architecture Design**: Suggested 3-Tier structure, Auth flow, and dynamic OTPs.
-- **Code Generation**: Implemented CRUD, Authentication, Email sending, and Tailwind migration.
-- **Documentation**: Generated this README and walkthroughs.
