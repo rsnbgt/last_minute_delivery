@@ -80,4 +80,4 @@ A 3-Tier application designed for delivery agents to verify and confirm shipment
 
 ### Demo Video
 
-<video controls src="demo_video.mp4" title="Title"></video>
+[Click here to watch the Demo Video](demo_video.mp4)
