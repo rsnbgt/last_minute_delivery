@@ -4,12 +4,12 @@ import axios from 'axios';
 // 192.168.1.3 is your Local LAN IP (Use this for Physical Device)
 const API_URL = 'http://192.168.1.3:3000/api/delivery';
 
-export const confirmDelivery = async (shipmentId, otpCode, userName) => {
+export const confirmDelivery = async (shipmentId, otpCode, agentId) => {
     try {
         const response = await axios.post(`${API_URL}/confirm`, {
             shipment_id: shipmentId,
             otp_code: otpCode,
-            user_name: userName
+            agent_id: agentId
         });
         return response.data;
     } catch (error) {

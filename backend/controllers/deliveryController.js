@@ -83,12 +83,12 @@ exports.requestOTP = async (req, res) => {
 
 exports.confirmDelivery = async (req, res) => {
     // ... existing confirmDelivery logic ...
-    const { shipment_id, otp_code, user_name } = req.body;
+    const { shipment_id, otp_code, agent_id } = req.body;
 
     // input validation
     // Basic validation
-    if (!shipment_id || !otp_code || !user_name) {
-        return res.status(400).json({ message: 'Shipment ID, OTP, and User Name are required.' });
+    if (!shipment_id || !otp_code || !agent_id) {
+        return res.status(400).json({ message: 'Shipment ID, OTP, and Agent ID are required.' });
     }
 
     try {
@@ -127,10 +127,10 @@ exports.confirmDelivery = async (req, res) => {
         // 4. Update Status
         await db.execute(
             'UPDATE shipments SET status = ?, delivered_at = NOW(), delivered_by = ? WHERE id = ?',
-            ['Delivered', user_name, shipment.id]
+            ['Delivered', agent_id, shipment.id]
         );
 
-        console.log(`Shipment ${shipment_id} verified and delivered by ${user_name}.`);
+        console.log(`Shipment ${shipment_id} verified and delivered by Agent ID ${agent_id}.`);
 
         res.status(200).json({
             message: 'Delivery confirmed successfully.',
