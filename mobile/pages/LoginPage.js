@@ -25,7 +25,7 @@ export default function LoginPage({ onLogin, onNavigateRegister }) {
     };
 
     return (
-        <View style={tw`flex-grow justify-center items-center p-5 pt-15 bg-[#023859]`}>
+        <View style={tw`flex-grow justify-center items-center p-5 bg-[#023859]`}>
             <Text style={tw`text-2xl font-bold mb-8 text-[#A7EBF2]`}>LOGIN</Text>
 
             <View style={tw`w-full mb-4`}>

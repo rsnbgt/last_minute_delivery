@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import tw from 'twrnc';
+import Navbar from './components/Navbar';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DeliveryPage from './pages/DeliveryPage';
@@ -22,34 +24,39 @@ export default function App() {
   };
 
   return (
-    <View style={tw`flex-1 bg-gray-100`}>
-      {view === 'login' && (
-        <LoginPage
-          onLogin={handleLoginSuccess}
-          onNavigateRegister={() => setView('register')}
-        />
-      )}
+    <SafeAreaProvider>
+      <View style={tw`flex-1 bg-[#023859]`}>
+        <Navbar />
+        <View style={tw`flex-1`}>
+          {view === 'login' && (
+            <LoginPage
+              onLogin={handleLoginSuccess}
+              onNavigateRegister={() => setView('register')}
+            />
+          )}
 
-      {view === 'register' && (
-        <RegisterPage
-          onNavigateLogin={() => setView('login')}
-        />
-      )}
+          {view === 'register' && (
+            <RegisterPage
+              onNavigateLogin={() => setView('login')}
+            />
+          )}
 
-      {view === 'delivery' && (
-        <DeliveryPage
-          agent={agent}
-          onLogout={handleLogout}
-          onNavigateHistory={() => setView('history')}
-        />
-      )}
+          {view === 'delivery' && (
+            <DeliveryPage
+              agent={agent}
+              onLogout={handleLogout}
+              onNavigateHistory={() => setView('history')}
+            />
+          )}
 
-      {view === 'history' && (
-        <HistoryPage
-          agent={agent}
-          onBack={() => setView('delivery')}
-        />
-      )}
-    </View>
+          {view === 'history' && (
+            <HistoryPage
+              agent={agent}
+              onBack={() => setView('delivery')}
+            />
+          )}
+        </View>
+      </View>
+    </SafeAreaProvider>
   );
 }

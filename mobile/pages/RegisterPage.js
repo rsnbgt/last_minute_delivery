@@ -28,7 +28,7 @@ export default function RegisterPage({ onNavigateLogin }) {
     };
 
     return (
-        <ScrollView contentContainerStyle={tw`flex-grow justify-center items-center p-5 pt-15 bg-[#023859]`}>
+        <ScrollView contentContainerStyle={tw`flex-grow justify-center items-center p-5 bg-[#023859]`}>
             <Text style={tw`text-2xl font-bold mb-8 text-[#A7EBF2]`}>REGISTER</Text>
 
             <View style={tw`w-full mb-4`}>

@@ -79,7 +79,7 @@ export default function DeliveryPage({ agent, onLogout, onNavigateHistory }) {
     };
 
     return (
-        <View style={tw`flex-1 p-5 items-center pt-15 bg-[#023859]`}>
+        <View style={tw`flex-1 p-5 items-center bg-[#023859]`}>
             <View style={tw`w-full flex-row justify-between mb-5 items-center`}>
                 <Text style={tw`text-base font-bold text-[#A7EBF2] rounded-full px-2 py-1 bg-[#26658C]`}>👤 {agent?.name}</Text>
                 <TouchableOpacity onPress={onNavigateHistory}>

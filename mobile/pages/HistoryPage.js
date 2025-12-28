@@ -24,7 +24,7 @@ export default function HistoryPage({ agent, onBack }) {
     };
 
     return (
-        <View style={tw`flex-1 p-5 items-center pt-15 bg-[#023859]`}>
+        <View style={tw`flex-1 p-5 items-center bg-[#023859]`}>
             <View style={tw`w-full flex-row justify-between mb-5 items-center`}>
                 <TouchableOpacity onPress={onBack}>
                     <Text style={tw`text-[#54ACBF] text-base`}>← Back to Delivery</Text>
